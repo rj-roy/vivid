@@ -46,6 +46,13 @@ PRESETS = (
 )
 
 
+def _application_icon() -> QIcon:
+    return QIcon.fromTheme(
+        APP_ID,
+        QIcon.fromTheme("preferences-desktop-display"),
+    )
+
+
 def _view_stable_id(view: DisplayView) -> str:
     return view.display.identity.stable_id if view.display.identity else ""
 
@@ -100,7 +107,7 @@ class MainWindow(QMainWindow):
         self.pool = QThreadPool(self)
         self.pool.setMaxThreadCount(1)
         self.setWindowTitle("Vivid — Display Saturation")
-        self.setWindowIcon(QIcon.fromTheme("preferences-desktop-display"))
+        self.setWindowIcon(_application_icon())
         self.setMinimumSize(680, 640)
         self.resize(820, 720)
         self._build_ui()
@@ -958,7 +965,7 @@ def main(argv: list[str] | None = None) -> int:
     app.setOrganizationName("Vivid")
     app.setDesktopFileName(APP_ID)
     app.setApplicationVersion(APP_VERSION)
-    app.setWindowIcon(QIcon.fromTheme("preferences-desktop-display"))
+    app.setWindowIcon(_application_icon())
     service = VividService()
     if arguments.identify:
         try:

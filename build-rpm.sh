@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+ROOT=$SCRIPT_DIR
 NAME=vivid
 TOPDIR=${RPM_TOPDIR:-"$ROOT/rpmbuild"}
 SPEC="$ROOT/packaging/vivid.spec"
@@ -19,7 +19,7 @@ info() {
 
 usage() {
     cat <<'EOF'
-Usage: ./scripts/build-rpm.sh
+Usage: ./build-rpm.sh
 
 Build a source tarball from the current checkout and run rpmbuild. The output is
 written to rpmbuild/RPMS and rpmbuild/SRPMS.

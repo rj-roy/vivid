@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+ROOT=$SCRIPT_DIR
 APP_ID=io.github.vivid.DisplaySaturation
 PREFIX=${PREFIX:-"$HOME/.local"}
 BINDIR=${BINDIR:-"$PREFIX/bin"}
@@ -32,7 +32,7 @@ info() {
 
 usage() {
     cat <<'EOF'
-Usage: ./scripts/uninstall.sh [--purge]
+Usage: ./uninstall.sh [--purge]
 
 Restore every display Vivid changed, disable autostart, and remove the
 user-level application files.

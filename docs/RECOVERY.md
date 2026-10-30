@@ -126,7 +126,7 @@ Check:
 
 ```bash
 vivid doctor
-vivid backend
+vivid capabilities
 ```
 
 Common causes:
@@ -175,7 +175,7 @@ If recovery fails:
 Source installation:
 
 ```bash
-./scripts/uninstall.sh
+./uninstall.sh
 ```
 
 RPM:

@@ -28,7 +28,7 @@ sudo dnf install python3-devel python3-setuptools python3-wheel rpm-build rpmdev
 From a checkout:
 
 ```bash
-./scripts/install.sh
+./install.sh
 ```
 
 The installer:
@@ -75,7 +75,7 @@ its `PATH`.
 The installer supports a custom user prefix:
 
 ```bash
-PREFIX="$HOME/bin" ./scripts/install.sh
+PREFIX="$HOME/bin" ./install.sh
 ```
 
 The application data still lives under `XDG_DATA_HOME`, and launchers are placed
@@ -86,7 +86,7 @@ in `$PREFIX/bin`. The desktop entry uses the absolute launcher path.
 Build an RPM from the checkout:
 
 ```bash
-./scripts/build-rpm.sh
+./build-rpm.sh
 ```
 
 The output is under `rpmbuild/RPMS/noarch/`. Install it with:
@@ -110,7 +110,7 @@ environments is not claimed.
 Source installation:
 
 ```bash
-./scripts/install.sh
+./install.sh
 ```
 
 The installer upgrades the package inside the existing virtual environment and
@@ -129,7 +129,7 @@ Settings and recovery state are preserved across upgrades.
 Source installation:
 
 ```bash
-./scripts/uninstall.sh
+./uninstall.sh
 ```
 
 RPM:
@@ -152,7 +152,7 @@ vivid uninstall --purge
 For the source installer:
 
 ```bash
-./scripts/uninstall.sh --purge
+./uninstall.sh --purge
 ```
 
 If restoration fails, uninstallation stops and keeps the recovery snapshot. See
@@ -165,12 +165,13 @@ See [CLI.md](CLI.md) for command and JSON details, and
 
 ```bash
 vivid --version
-vivid backend
+vivid capabilities
 vivid list
 vivid doctor
 ```
 
-`vivid backend` must report `Supported: yes` on a supported KDE Wayland session.
+`vivid capabilities` must report `Supported: yes` on a supported KDE Wayland
+session.
 A warning about a single display is expected on a laptop without an external
 monitor. A warning about an unverified Plasma version means the required
 interfaces were detected but that release has not been hardware-tested.

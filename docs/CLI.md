@@ -16,7 +16,7 @@ commands, and every subcommand accepts `--help`, `--json`, and `--verbose`.
 | `vivid set <display> <-100..100> [--yes]` | Apply a saturation adjustment |
 | `vivid reset <display>` | Restore one display's original state |
 | `vivid reset --all` | Restore every display changed by Vivid |
-| `vivid backend` | Show detected KWin/KScreen capabilities |
+| `vivid capabilities` | Check display support and detected KWin/KScreen capabilities |
 | `vivid doctor [--write FILE]` | Collect diagnostics without changing state |
 | `vivid export-settings FILE` | Export display preferences as versioned JSON |
 | `vivid restore-settings FILE [--no-apply]` | Import preferences and optionally apply them |
@@ -220,7 +220,8 @@ every result succeeded. A result with status `unsupported` exits with code 3.
 }
 ```
 
-`vivid backend` exits with code 3 when `supported` is false.
+`vivid capabilities` exits with code 3 when `supported` is false. The older
+`vivid backend` spelling remains available as an alias.
 
 ### `doctor`
 
@@ -268,7 +269,7 @@ vivid set HDMI-A-1 0
 vivid get eDP-1 --json
 vivid reset DP-1
 vivid reset --all
-vivid backend --json
+vivid capabilities --json
 vivid doctor --write /tmp/vivid-diagnostics.json
 vivid autostart enable
 vivid safe-mode on

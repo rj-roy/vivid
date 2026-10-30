@@ -3,7 +3,7 @@
 set -euo pipefail
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+ROOT=$SCRIPT_DIR
 APP_ID=io.github.vivid.DisplaySaturation
 PREFIX=${PREFIX:-"$HOME/.local"}
 BINDIR=${BINDIR:-"$PREFIX/bin"}
@@ -35,7 +35,7 @@ info() {
 
 usage() {
     cat <<'EOF'
-Usage: ./scripts/install.sh
+Usage: ./install.sh
 
 Install Vivid for the current user under ~/.local by default.
 
@@ -197,8 +197,8 @@ info "  Config:  $CONFIG_HOME/vivid/config.json"
 info "  State:   $STATE_HOME/vivid/state.json"
 info ""
 info "Ensure $BINDIR is on PATH, then run:"
-info "  vivid backend"
+info "  vivid capabilities"
 info "  vivid list"
 info "  vivid-gui"
 info ""
-info "To remove it, run ./scripts/uninstall.sh"
+info "To remove it, run ./uninstall.sh"

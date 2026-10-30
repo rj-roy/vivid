@@ -38,7 +38,7 @@ generation, simulated backend behaviour, and read-only live discovery:
 | Little CMS | 2.16.0 |
 
 The live session reported two outputs: an internal `eDP-1` panel and an external
-`HDMI-A-1` monitor. `vivid backend` reported `Supported: yes`, and `vivid list`
+`HDMI-A-1` monitor. `vivid capabilities` reported `Supported: yes`, and `vivid list`
 reported both outputs as active with ICC profile support.
 
 This evidence proves that the interfaces are present and discovery works. It is
@@ -96,7 +96,7 @@ When reporting a compatibility result, include:
 
 ```bash
 vivid --version
-vivid backend --json
+vivid capabilities --json
 vivid doctor --json
 rpm -q plasma-workspace kwin kscreen lcms2
 ```

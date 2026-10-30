@@ -3,19 +3,19 @@
 Start with the read-only checks:
 
 ```bash
-vivid backend
+vivid capabilities
 vivid list
 vivid status
 vivid doctor --write /tmp/vivid-diagnostics.json
 ```
 
-`vivid backend` explains why the active session is unsupported. The log is at
+`vivid capabilities` explains why the active session is unsupported. The log is at
 `~/.local/state/vivid/vivid.log`. Run a command with `--verbose` for debug
 logging. Never run Vivid as root.
 
 ## Vivid reports the backend as unsupported
 
-Run `vivid backend` and match the reason:
+Run `vivid capabilities` and match the reason:
 
 ### "a native Wayland session is required; X11 and unknown sessions are unsupported"
 
@@ -188,7 +188,7 @@ file a bug.
 
 ```bash
 vivid --version
-vivid backend --json > /tmp/vivid-backend.json
+vivid capabilities --json > /tmp/vivid-capabilities.json
 vivid doctor --write /tmp/vivid-diagnostics.json
 vivid list --json > /tmp/vivid-displays.json
 journalctl --user -b --no-pager > /tmp/vivid-journal.txt

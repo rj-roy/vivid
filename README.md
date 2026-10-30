@@ -99,7 +99,7 @@ COSMIC, HDR output, and compositors other than KWin are unsupported. See
 Build the RPM from a checkout:
 
 ```bash
-./scripts/build-rpm.sh
+./build-rpm.sh
 sudo dnf install rpmbuild/RPMS/noarch/vivid-1.0.0-1.fc44.noarch.rpm
 ```
 
@@ -120,7 +120,7 @@ The source installer creates a private virtual environment under
 launchers into `~/.local/bin`. It does not use `sudo`.
 
 ```bash
-./scripts/install.sh
+./install.sh
 ```
 
 Required Fedora packages:
@@ -143,18 +143,18 @@ changes still use the same validated Vivid CLI/backend path.
 To remove the application:
 
 ```bash
-./scripts/uninstall.sh
+./uninstall.sh
 ```
 
 The uninstaller asks Vivid to restore every display it changed before removing
 application files. If restoration fails, it stops and preserves recovery data.
-Use `./scripts/uninstall.sh --purge` only when you also want to delete settings,
+Use `./uninstall.sh --purge` only when you also want to delete settings,
 recovery state, and cached profiles. See [INSTALLATION.md](docs/INSTALLATION.md).
 
 ## Quick start
 
 ```bash
-vivid backend
+vivid capabilities
 vivid list
 vivid set DP-1 30
 vivid get DP-1
@@ -188,7 +188,7 @@ See [CLI.md](docs/CLI.md) for the complete command and JSON schema reference.
 ```bash
 vivid list --json
 vivid status
-vivid backend --json
+vivid capabilities --json
 vivid set "Studio Display" 25 --yes
 vivid set DP-1 -35
 vivid get HDMI-A-1
@@ -249,7 +249,7 @@ sudo dnf remove vivid
 For a source installation:
 
 ```bash
-./scripts/uninstall.sh
+./uninstall.sh
 ```
 
 `vivid uninstall` restores changed displays, disables Vivid autostart, and removes
@@ -262,7 +262,7 @@ information.
 Start with diagnostics:
 
 ```bash
-vivid backend
+vivid capabilities
 vivid doctor
 ```
 

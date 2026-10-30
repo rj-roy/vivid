@@ -242,7 +242,7 @@ def _cmd_reset(args: argparse.Namespace) -> int:
     return _print_result(result, args.json)
 
 
-def _cmd_backend(args: argparse.Namespace) -> int:
+def _cmd_capabilities(args: argparse.Namespace) -> int:
     service = _service(args)
     payload = _capability_payload(service)
     if args.json:
@@ -606,10 +606,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     reset_parser.set_defaults(func=_cmd_reset)
 
-    backend_parser = subparsers.add_parser(
-        "backend", parents=[common], help="show backend capabilities"
+    capabilities_parser = subparsers.add_parser(
+        "capabilities",
+        aliases=["backend"],
+        parents=[common],
+        help="check display support and detected KWin/KScreen capabilities",
     )
-    backend_parser.set_defaults(func=_cmd_backend)
+    capabilities_parser.set_defaults(func=_cmd_capabilities)
 
     doctor_parser = subparsers.add_parser(
         "doctor", parents=[common], help="collect diagnostics without changing settings"

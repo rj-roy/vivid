@@ -1,16 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3daee9"/>
-      <stop offset="0.5" stop-color="#8e44ad"/>
-      <stop offset="1" stop-color="#e65c5c"/>
+    <linearGradient id="background" x1="14" y1="12" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#263b78"/>
+      <stop offset="1" stop-color="#10182f"/>
     </linearGradient>
+    <linearGradient id="spectrum" x1="27" y1="33" x2="101" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38d9e8"/>
+      <stop offset=".34" stop-color="#6488ff"/>
+      <stop offset=".68" stop-color="#bd65f5"/>
+      <stop offset="1" stop-color="#ff756d"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="29" y1="22" x2="98" y2="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#c5d8ff"/>
+    </linearGradient>
+    <clipPath id="screen">
+      <rect x="15" y="20" width="98" height="63" rx="9"/>
+    </clipPath>
   </defs>
-  <rect x="8" y="18" width="112" height="74" rx="8" ry="8" fill="#20242a" stroke="#3daee9" stroke-width="5"/>
-  <rect x="18" y="28" width="92" height="54" rx="3" ry="3" fill="url(#screen)"/>
-  <path d="M50 108h28l4-12H46z" fill="#20242a"/>
-  <rect x="34" y="106" width="60" height="7" rx="3" ry="3" fill="#20242a"/>
-  <circle cx="98" cy="96" r="16" fill="#20242a" stroke="#e65c5c" stroke-width="4"/>
-  <path d="M98 84v24M86 96h24" stroke="#e65c5c" stroke-width="4" stroke-linecap="round"/>
+  <rect width="128" height="128" rx="28" fill="url(#background)"/>
+  <path d="M27 12h74" stroke="#fff" stroke-linecap="round" stroke-opacity=".12" stroke-width="2"/>
+  <rect x="9" y="13" width="110" height="79" rx="14" fill="#111a31" stroke="url(#frame)" stroke-width="4"/>
+  <g clip-path="url(#screen)">
+    <rect x="15" y="20" width="98" height="63" fill="url(#spectrum)"/>
+    <path d="M15 20h36L15 83z" fill="#fff" opacity=".12"/>
+    <path d="M74 20h39v63H55z" fill="#f3f5ff" opacity=".08"/>
+    <rect x="27" y="68" width="74" height="6" rx="3" fill="#11182a" opacity=".42"/>
+    <rect x="27" y="68" width="50" height="6" rx="3" fill="#fff" opacity=".88"/>
+    <circle cx="77" cy="71" r="7" fill="#fff" stroke="#5268ba" stroke-width="2"/>
+  </g>
+  <path d="M57 96h14v10H57z" fill="#d6e2ff"/>
+  <path d="M42 114c0-2.2 1.8-4 4-4h36c2.2 0 4 1.8 4 4v2H42z" fill="url(#frame)"/>
+  <path d="M23 91h82" stroke="#fff" stroke-linecap="round" stroke-opacity=".12" stroke-width="1.5"/>
 </svg>

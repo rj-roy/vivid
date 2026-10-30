@@ -19,7 +19,7 @@ PlasmoidItem {
     property string activeOperation: ""
     property var pendingCommands: []
 
-    Plasmoid.icon: "preferences-desktop-display"
+    Plasmoid.icon: "io.github.vivid.DisplaySaturation"
     toolTipMainText: "Vivid Saturation Controls"
     toolTipSubText: displays.map(function(view) {
         return view.display.output_name + " " + formatPercent(view.preferred_saturation)
@@ -229,10 +229,10 @@ PlasmoidItem {
     onExpandedChanged: if (expanded) refreshDisplays()
 
     compactRepresentation: PC3.ToolButton {
-        icon.name: "preferences-desktop-display"
-        text: root.displays.length
-            ? root.formatPercent(root.displays[0].preferred_saturation)
-            : "Vivid"
+        padding: 0
+        icon.name: "io.github.vivid.DisplaySaturation"
+        icon.width: Kirigami.Units.iconSizes.large
+        icon.height: Kirigami.Units.iconSizes.large
         Accessible.name: "Open Vivid per-display saturation controls"
         onClicked: root.expanded = !root.expanded
     }

@@ -8,7 +8,7 @@
     ],
     "Category": "System Information",
     "Description": "Adjust saturation independently for each display",
-    "Icon": "preferences-desktop-display",
+    "Icon": "io.github.vivid.DisplaySaturation",
     "Id": "io.github.vivid.DisplaySaturation",
     "License": "MIT",
     "Name": "Vivid Saturation Controls",
