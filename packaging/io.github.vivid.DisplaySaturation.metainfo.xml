@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vivid.DisplaySaturation</id>
+  <name>Vivid</name>
+  <summary>Independent per-display saturation control</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      Vivid adjusts the colour saturation of each physical display independently
+      on KDE Plasma Wayland. It generates a synthetic ICC profile for the selected
+      output, assigns it through KScreen, and verifies that KWin reports the new
+      per-output colour state before claiming success.
+    </p>
+    <p>
+      Changing one monitor does not change another. Settings are stored per
+      physical display and restored after login, reboot, or monitor reconnection.
+      Vivid records the original profile assignment before the first change and
+      restores it on reset or uninstall.
+    </p>
+    <p>
+      Vivid requires KDE Plasma 6 on a native Wayland session, KScreen, KWin, and
+      Little CMS 2. It does not use root privileges, a global shader, xrandr, or a
+      generic sRGB fallback. HDR output is not supported.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.vivid.DisplaySaturation.desktop</launchable>
+  <url type="homepage">https://github.com/rj-roy/vivid</url>
+  <url type="bugtracker">https://github.com/rj-roy/vivid/issues</url>
+  <url type="help">https://github.com/rj-roy/vivid/blob/main/docs/TROUBLESHOOTING.md</url>
+  <developer id="io.github.vivid">
+    <name>Vivid contributors</name>
+  </developer>
+  <categories>
+    <category>Settings</category>
+    <category>HardwareSettings</category>
+  </categories>
+  <keywords>
+    <keyword>saturation</keyword>
+    <keyword>color</keyword>
+    <keyword>display</keyword>
+    <keyword>monitor</keyword>
+    <keyword>vibrance</keyword>
+    <keyword>ICC</keyword>
+    <keyword>KDE</keyword>
+    <keyword>Wayland</keyword>
+  </keywords>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.0.0" date="2026-10-30">
+      <description>
+        <p>Initial release with per-display saturation, recovery, CLI, GUI, and Fedora packaging.</p>
+      </description>
+    </release>
+  </releases>
+</component>

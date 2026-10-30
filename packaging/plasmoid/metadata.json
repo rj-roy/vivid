@@ -1,0 +1,18 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "Vivid contributors"
+      }
+    ],
+    "Category": "System Information",
+    "Description": "Adjust saturation independently for each display",
+    "Icon": "preferences-desktop-display",
+    "Id": "io.github.vivid.DisplaySaturation",
+    "License": "MIT",
+    "Name": "Vivid Saturation Controls",
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}

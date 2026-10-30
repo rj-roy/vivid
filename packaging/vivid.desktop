@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Vivid
+GenericName=Display Saturation Control
+Comment=Adjust saturation independently for each connected display
+Exec=vivid-gui
+TryExec=vivid-gui
+Icon=io.github.vivid.DisplaySaturation
+Terminal=false
+Categories=Settings;HardwareSettings;KDE;Qt;
+Keywords=saturation;color;colour;display;monitor;vibrance;icc;profile;
+StartupNotify=true
+StartupWMClass=Vivid
